@@ -2712,6 +2712,7 @@
     document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
     document.querySelector(`[data-panel="${name}"]`).classList.add('active');
     document.getElementById('panel-' + name).classList.add('active');
+    if (typeof updateHero === 'function') updateHero();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   document.querySelectorAll('.day-head').forEach(h => {

@@ -1712,8 +1712,8 @@
 
   /* === CTA cards (from main file) === */
   .cta {
-    margin: 56px 0 24px;
-    padding: 48px;
+    margin: 80px 0 24px;
+    padding: 56px 48px;
     background: linear-gradient(135deg, var(--s2) 0%, var(--s1) 100%);
     border: 1px solid var(--border);
     position: relative;
@@ -1745,27 +1745,23 @@
   .cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
+    gap: 14px;
     background: var(--gold);
     color: var(--bg);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    letter-spacing: 0.08em;
+    padding: 16px 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
-  .cta-btn:hover {
-    background: var(--gold2);
-    transform: translateY(-1px);
-  }
-  .cta-btn .arrow {
-    font-size: 16px;
-    font-family: 'Fraunces', serif;
-  }
+  .cta-btn:hover { background: var(--gold2); }
+  .cta-btn .arrow { transition: transform 0.25s; }
+  .cta-btn:hover .arrow { transform: translateX(6px); }
 
   
 
@@ -2566,7 +2562,13 @@
  </div>
  </div>
  </div>
- </div>
+ 
+    <div class="cta">
+      <h3>Next: <em>Full Expireds Playbook.</em></h3>
+      <p>The deeper script for sellers who want to talk. Objection handles, rebuttals, scaling questions.</p>
+      <button class="cta-btn" onclick="document.querySelector('button.tab[data-panel=&quot;full&quot;]').click()">Continue &middot; Full Playbook <span class="arrow">&rarr;</span></button>
+    </div>
+</div>
 
  <!-- ============ PANEL 2: FULL EXPIREDS PLAYBOOK ============ -->
  <div class="panel" id="panel-full">
@@ -2864,7 +2866,13 @@
  </div>
  </div>
  </div>
- </div>
+ 
+    <div class="cta">
+      <h3>Next: <em>Mock Call.</em></h3>
+      <p>Five seller objections. For each one, pick the response that moves the call forward.</p>
+      <button class="cta-btn" onclick="document.querySelector('button.tab[data-panel=&quot;mock&quot;]').click()">Continue &middot; Mock Call <span class="arrow">&rarr;</span></button>
+    </div>
+</div>
 
  <!-- ============ PANEL 3: VOICE MOCK CALL ============ -->
  <div class="panel" id="panel-mock">
@@ -3388,6 +3396,12 @@
  </ol>
  </div>
  </div>
+ 
+    <div class="cta">
+      <h3>Back to <em>Onboarding.</em></h3>
+      <p>You finished Script Mastery. Head back to the main onboarding for resources, schedule, and your first call prep.</p>
+      <a class="cta-btn" href="isa-onboarding-current.html" style="text-decoration: none;">Back &middot; Onboarding <span class="arrow">&larr;</span></a>
+    </div>
  </div>
 
  <footer>
@@ -3408,6 +3422,7 @@
  document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
  t.classList.add('active');
  document.getElementById('panel-' + t.dataset.panel).classList.add('active');
+ window.scrollTo({ top: 0, behavior: 'smooth' });
  });
  });
 
