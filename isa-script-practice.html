@@ -1289,15 +1289,19 @@
     transition: background 0.2s;
   }
 .vm-num {
-    font-family: 'Fraunces', serif;
-    font-size: 56px;
-    font-weight: 300;
-    line-height: 1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     color: var(--gold);
-    font-style: italic;
-    font-variation-settings: "opsz" 144;
+    white-space: nowrap;
+    padding-top: 8px;
+    min-width: 90px;
   }
-.vm { background: var(--s1); border: 1px solid var(--border); margin-bottom: 16px; overflow: hidden; }
+.vm { background: var(--s1); border: 1px solid var(--border); margin-bottom: 16px; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; }
+  .vm:hover { border-color: var(--gold); }
+  .vm.open { border-color: rgba(200,155,60,0.3); }
 .phrase-quote em { color: var(--gold); font-style: italic; }
 .scenario-feedback {
     margin-top: 22px;
@@ -1541,7 +1545,7 @@
   }
 .takeaways li strong { color: var(--gold); font-weight: 500; }
 .scenario-opt.correct { border-color: var(--gold); background: rgba(200,155,60,0.08); }
-.vm-num { font-size: 40px; }
+
 .vm.open .vm-body { padding: 22px 24px 28px; }
 .vm-body {
     max-height: 0;
@@ -1705,6 +1709,248 @@
     display: flex; align-items: baseline; gap: 16px;
   }
 .sec-h-num { color: var(--gold); font-weight: 500; }
+
+  /* === CTA cards (from main file) === */
+  .cta {
+    margin: 56px 0 24px;
+    padding: 48px;
+    background: linear-gradient(135deg, var(--s2) 0%, var(--s1) 100%);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-variation-settings: "opsz" 48;
+  }
+  .cta h3 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+  }
+  .cta p {
+    color: var(--text2);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 60ch;
+    font-family: 'Inter', sans-serif;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--gold);
+    color: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cta-btn:hover {
+    background: var(--gold2);
+    transform: translateY(-1px);
+  }
+  .cta-btn .arrow {
+    font-size: 16px;
+    font-family: 'Fraunces', serif;
+  }
+
+  
+
+  /* === Video link button (opens YouTube in new tab) === */
+  .video-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    background: var(--s1);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    margin: 24px 0 28px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .video-link:hover {
+    border-color: var(--gold);
+    background: var(--s2);
+  }
+  .video-link-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .video-link-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .video-link-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .video-link-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .video-link-arrow {
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  
+
+  /* === Homework block card === */
+  .homework {
+    background: var(--s2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 32px;
+  }
+  .homework h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .homework h6 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text);
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+  .homework ol {
+    margin: 0;
+    padding-left: 24px;
+    color: var(--text2);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .homework ol li {
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+  .homework ol li:last-child {
+    margin-bottom: 0;
+  }
+  .homework ol li::marker {
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .homework strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* === Video poster (YouTube thumbnail with red play button) === */
+  .video-poster {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--s1);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 24px 0 28px;
+    transition: border-color 0.2s;
+  }
+  .video-poster:hover {
+    border-color: var(--gold);
+  }
+  .video-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.2s;
+  }
+  .video-poster:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+  }
+  .video-poster-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 70%, rgba(0,0,0,0.4) 100%);
+    transition: background 0.2s;
+  }
+  .video-poster:hover .video-poster-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.45) 100%);
+  }
+  .yt-play-btn {
+    width: 90px;
+    height: 64px;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+    transition: transform 0.2s;
+  }
+  .video-poster:hover .yt-play-btn {
+    transform: scale(1.08);
+  }
+  .yt-play-btn-bg {
+    fill: #ff0000;
+    transition: fill 0.15s;
+  }
+  .video-poster:hover .yt-play-btn-bg {
+    fill: #ff1a1a;
+  }
+  .video-poster-caption {
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.92);
+    background: rgba(0,0,0,0.55);
+    padding: 6px 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .video-poster-caption .arrow {
+    color: var(--gold);
+    margin-left: 4px;
+  }
 </style>
 </head>
 <body>
@@ -1748,7 +1994,7 @@
     <!-- VM1 -->
     <div class="vm open" data-vm="1">
       <div class="vm-head">
-        <div class="vm-num">i</div>
+        <div class="vm-num">Lesson 01</div>
         <div class="vm-meta">
           <div class="vm-eyebrow">Foundation</div>
           <h4>Why Scripts Are Dead</h4>
@@ -1757,12 +2003,13 @@
         <div class="vm-time">~9 min</div>
       </div>
       <div class="vm-body">
-        <div class="vid-ph">
-          <div class="vid-ph-icon"></div>
-          <div class="vid-ph-label">Video 01 · Placeholder</div>
-          <div class="vid-ph-title">"Why Scripts Are Dead"</div>
-          <div class="vid-ph-instruction">Replace this block with your <code>&lt;iframe&gt;</code> from YouTube unlisted.</div>
-        </div>
+        <a class="video-poster" href="https://youtu.be/9dKsgLnlU7w" target="_blank" rel="noopener" title="Why Scripts Are Dead">
+          <img src="https://img.youtube.com/vi/9dKsgLnlU7w/maxresdefault.jpg" alt="Why Scripts Are Dead" loading="lazy" onerror="this.src='https://img.youtube.com/vi/9dKsgLnlU7w/hqdefault.jpg'">
+          <div class="video-poster-overlay">
+            <svg viewBox="0 0 68 48" class="yt-play-btn"><path class="yt-play-btn-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+          <div class="video-poster-caption">Watch on YouTube <span class="arrow">↗</span></div>
+        </a>
         <div class="takeaways">
           <h5>Key takeaways</h5>
           <ul>
@@ -1782,7 +2029,7 @@
           </div>
         </div>
         <div class="scenario" data-scenario="s1">
-          <div class="scenario-label">Decision Scenario · 01</div>
+          <div class="scenario-label">Lesson 1 Quiz</div>
           <div class="scenario-situation">30 seconds into a call. Seller is guarded. You need to break through.</div>
           <div class="seller-quote">Look, I&apos;m getting calls like this every day. Who is this and what do you want?</div>
           <div class="question-prompt">What do you say next?</div>
@@ -1806,7 +2053,7 @@
           </div>
         </div>
         <div class="homework">
-          <h5>Homework · Video 1</h5>
+          <h5>Homework · Lesson 1</h5>
           <h6>Practice on your family before you practice on a seller.</h6>
           <ol>
             <li>For the next 24 hours, every time someone in your house tells you something, respond with <strong>"Tell me more about that"</strong> instead of giving your opinion.</li>
@@ -1820,7 +2067,7 @@
     <!-- VM2 -->
     <div class="vm" data-vm="2">
       <div class="vm-head">
-        <div class="vm-num">ii</div>
+        <div class="vm-num">Lesson 02</div>
         <div class="vm-meta">
           <div class="vm-eyebrow">The Toolbelt</div>
           <h4>The Seven Question Categories</h4>
@@ -1829,12 +2076,13 @@
         <div class="vm-time">~11 min</div>
       </div>
       <div class="vm-body">
-        <div class="vid-ph">
-          <div class="vid-ph-icon"></div>
-          <div class="vid-ph-label">Video 02 · Placeholder</div>
-          <div class="vid-ph-title">"The Question Categories"</div>
-          <div class="vid-ph-instruction">Replace this block with your <code>&lt;iframe&gt;</code> from YouTube unlisted.</div>
-        </div>
+        <a class="video-poster" href="https://youtu.be/64akuKdSiUE" target="_blank" rel="noopener" title="The Question Categories">
+          <img src="https://img.youtube.com/vi/64akuKdSiUE/maxresdefault.jpg" alt="The Question Categories" loading="lazy" onerror="this.src='https://img.youtube.com/vi/64akuKdSiUE/hqdefault.jpg'">
+          <div class="video-poster-overlay">
+            <svg viewBox="0 0 68 48" class="yt-play-btn"><path class="yt-play-btn-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+          <div class="video-poster-caption">Watch on YouTube <span class="arrow">↗</span></div>
+        </a>
         <div class="takeaways">
           <h5>Key takeaways</h5>
           <ul>
@@ -1861,7 +2109,7 @@
           </div>
         </div>
         <div class="scenario" data-scenario="s2">
-          <div class="scenario-label">Decision Scenario · 02</div>
+          <div class="scenario-label">Lesson 2 Quiz</div>
           <div class="scenario-situation">Eight minutes into a call with a motivated seller. They told you they want to move to Florida next spring.</div>
           <div class="seller-quote">Yeah, we definitely want to sell this place. Florida is calling.</div>
           <div class="question-prompt">Which question gets you the most actionable information?</div>
@@ -1885,7 +2133,7 @@
           </div>
         </div>
         <div class="homework">
-          <h5>Homework · Video 2</h5>
+          <h5>Homework · Lesson 2</h5>
           <h6>Build your own question toolbelt.</h6>
           <ol>
             <li>Take the seven categories. For each, write a version <strong>in your own words</strong>.</li>
@@ -1899,7 +2147,7 @@
     <!-- VM3 -->
     <div class="vm" data-vm="3">
       <div class="vm-head">
-        <div class="vm-num">iii</div>
+        <div class="vm-num">Lesson 03</div>
         <div class="vm-meta">
           <div class="vm-eyebrow">The Rules</div>
           <h4>What to Avoid &amp; The Six Skills</h4>
@@ -1908,12 +2156,13 @@
         <div class="vm-time">~3 min</div>
       </div>
       <div class="vm-body">
-        <div class="vid-ph">
-          <div class="vid-ph-icon"></div>
-          <div class="vid-ph-label">Video 03 · Placeholder</div>
-          <div class="vid-ph-title">"What to Avoid + Six Skills"</div>
-          <div class="vid-ph-instruction">Replace this block with your <code>&lt;iframe&gt;</code> from YouTube unlisted.</div>
-        </div>
+        <a class="video-poster" href="https://youtu.be/qNxKVjsRlOo" target="_blank" rel="noopener" title="What to Avoid + Six Skills">
+          <img src="https://img.youtube.com/vi/qNxKVjsRlOo/maxresdefault.jpg" alt="What to Avoid + Six Skills" loading="lazy" onerror="this.src='https://img.youtube.com/vi/qNxKVjsRlOo/hqdefault.jpg'">
+          <div class="video-poster-overlay">
+            <svg viewBox="0 0 68 48" class="yt-play-btn"><path class="yt-play-btn-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+          <div class="video-poster-caption">Watch on YouTube <span class="arrow">↗</span></div>
+        </a>
         <div class="takeaways">
           <h5>Key takeaways</h5>
           <ul>
@@ -1936,7 +2185,7 @@
           </div>
         </div>
         <div class="scenario" data-scenario="s3">
-          <div class="scenario-label">Decision Scenario · 03</div>
+          <div class="scenario-label">Lesson 3 Quiz</div>
           <div class="scenario-situation">The seller just told you they are going to relist with the same agent. A family friend.</div>
           <div class="seller-quote">Tom is family. We have used him for 20 years. I owe him another shot.</div>
           <div class="question-prompt">What do you ask next?</div>
@@ -1960,7 +2209,7 @@
           </div>
         </div>
         <div class="homework">
-          <h5>Homework · Video 3</h5>
+          <h5>Homework · Lesson 3</h5>
           <h6>Find your "why" habit.</h6>
           <ol>
             <li>For the next two days, every time you catch yourself about to say "why," pause and rephrase as "what" or "how."</li>
@@ -1973,7 +2222,7 @@
     <!-- VM4 -->
     <div class="vm" data-vm="4">
       <div class="vm-head">
-        <div class="vm-num">iv</div>
+        <div class="vm-num">Lesson 04</div>
         <div class="vm-meta">
           <div class="vm-eyebrow">The Roleplay</div>
           <h4>Beatriz × the scripts coach · Discovering Motivation</h4>
@@ -1982,12 +2231,13 @@
         <div class="vm-time">~10 min</div>
       </div>
       <div class="vm-body">
-        <div class="vid-ph">
-          <div class="vid-ph-icon"></div>
-          <div class="vid-ph-label">Video 04 · Placeholder</div>
-          <div class="vid-ph-title">"Beatriz × the scripts coach · The Motivation Roleplay"</div>
-          <div class="vid-ph-instruction">Replace this block with your <code>&lt;iframe&gt;</code> from YouTube unlisted.</div>
-        </div>
+        <a class="video-poster" href="https://youtu.be/oglvwXIHvlM" target="_blank" rel="noopener" title="Beatriz × the scripts coach · The Motivation Roleplay">
+          <img src="https://img.youtube.com/vi/oglvwXIHvlM/maxresdefault.jpg" alt="Beatriz × the scripts coach · The Motivation Roleplay" loading="lazy" onerror="this.src='https://img.youtube.com/vi/oglvwXIHvlM/hqdefault.jpg'">
+          <div class="video-poster-overlay">
+            <svg viewBox="0 0 68 48" class="yt-play-btn"><path class="yt-play-btn-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+          <div class="video-poster-caption">Watch on YouTube <span class="arrow">↗</span></div>
+        </a>
         <div class="takeaways">
           <h5>Key takeaways</h5>
           <ul>
@@ -2008,7 +2258,7 @@
           </div>
         </div>
         <div class="scenario" data-scenario="s4">
-          <div class="scenario-label">Decision Scenario · 04</div>
+          <div class="scenario-label">Lesson 4 Quiz</div>
           <div class="scenario-situation">A seller said they are "just browsing." You followed up and learned they are considering selling to buy investment property. They went quiet.</div>
           <div class="seller-quote">...I don&apos;t know. It&apos;s a big decision. I&apos;d need to think about it.</div>
           <div class="question-prompt">What is the strongest move?</div>
@@ -2032,7 +2282,7 @@
           </div>
         </div>
         <div class="homework">
-          <h5>Homework · Video 4</h5>
+          <h5>Homework · Lesson 4</h5>
           <h6>Watch Beatriz get out of the way.</h6>
           <ol>
             <li>Re-watch the roleplay with the sound off. Watch her body language.</li>
@@ -2046,7 +2296,7 @@
     <!-- VM5 -->
     <div class="vm" data-vm="5">
       <div class="vm-head">
-        <div class="vm-num">v</div>
+        <div class="vm-num">Lesson 05</div>
         <div class="vm-meta">
           <div class="vm-eyebrow">The Close</div>
           <h4>Scaling Questions in Action · Rachel&apos;s Call</h4>
@@ -2055,12 +2305,13 @@
         <div class="vm-time">~5 min</div>
       </div>
       <div class="vm-body">
-        <div class="vid-ph">
-          <div class="vid-ph-icon"></div>
-          <div class="vid-ph-label">Video 05 · Placeholder</div>
-          <div class="vid-ph-title">"Scaling Questions · Rachel&apos;s Call"</div>
-          <div class="vid-ph-instruction">Replace this block with your <code>&lt;iframe&gt;</code> from YouTube unlisted.</div>
-        </div>
+        <a class="video-poster" href="https://youtu.be/ZO4Y4vMHLdA" target="_blank" rel="noopener" title="Scaling Questions · Rachel&apos;s Call">
+          <img src="https://img.youtube.com/vi/ZO4Y4vMHLdA/maxresdefault.jpg" alt="Scaling Questions · Rachel&apos;s Call" loading="lazy" onerror="this.src='https://img.youtube.com/vi/ZO4Y4vMHLdA/hqdefault.jpg'">
+          <div class="video-poster-overlay">
+            <svg viewBox="0 0 68 48" class="yt-play-btn"><path class="yt-play-btn-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
+          </div>
+          <div class="video-poster-caption">Watch on YouTube <span class="arrow">↗</span></div>
+        </a>
         <div class="takeaways">
           <h5>Key takeaways</h5>
           <ul>
@@ -2085,7 +2336,7 @@
           </div>
         </div>
         <div class="scenario" data-scenario="s5">
-          <div class="scenario-label">Decision Scenario · 05</div>
+          <div class="scenario-label">Lesson 5 Quiz</div>
           <div class="scenario-situation">Six minutes in. Clear motivation (downsizing). You used a scaling question. They said 6 out of 10.</div>
           <div class="seller-quote">Yeah, I guess we are a 6. We&apos;re definitely thinking about it, but we don&apos;t need to move fast.</div>
           <div class="question-prompt">What is your next move?</div>
@@ -2129,7 +2380,7 @@
     <div class="cta">
       <h3>Next: <em>Short Script.</em></h3>
       <p>The framework you just learned, distilled into a one-page script you can read off the screen on call one.</p>
-      <button class="cta-btn" onclick="switchTab('mastery-short')">Continue · Short Script →</button>
+      <button class="cta-btn" onclick="document.querySelector('button.tab[data-panel=&quot;short&quot;]').click()">Continue &middot; Short Script <span class="arrow">&rarr;</span></button>
     </div>
   </div>
 
@@ -3543,6 +3794,16 @@
       feedback.innerHTML = '<div class="scenario-feedback-rationale">' +
         (correct ? '<strong>Correct.</strong> ' : '<strong>Not quite.</strong> ') +
         rationale + '</div>';
+    });
+  });
+
+  
+  // ============ VM ACCORDION (framework video modules) ============
+  document.querySelectorAll('.vm-head').forEach(head => {
+    head.style.cursor = 'pointer';
+    head.addEventListener('click', function() {
+      const vm = this.closest('.vm');
+      if (vm) vm.classList.toggle('open');
     });
   });
 
